@@ -6,7 +6,7 @@
 /*   By: fmanzana <fmanzana@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 13:24:34 by fmanzana          #+#    #+#             */
-/*   Updated: 2023/07/01 20:54:05 by fmanzana         ###   ########.fr       */
+/*   Updated: 2023/07/04 18:06:48 by fmanzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,16 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap::ClapTrap(const ClapTrap &cp) {
-	this->_name = cp._name;
+	std::cout << "ClapTrap " + this->_name + " has been created with copy constructor.\n";
+	*this = cp;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &cp) {
+	std::cout << "Copy assignment operator called.\n";
 	this->_name = cp._name;
+	this->energy = cp.energy;
+	this->hits = cp.hits;
+	this->damage = cp.damage;
 	return (*this);
 }
 
