@@ -33,8 +33,8 @@ ScavTrap::~ScavTrap() {
 }
 
 ScavTrap::ScavTrap(const ScavTrap &cp) : ClapTrap() {
-	std::cout << "ScavTrap " + this->_name + " has been created with copy constructor.\n";
 	*this = cp;
+	std::cout << "ScavTrap " + this->_name + " has been created with copy constructor.\n";
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &cp) {
