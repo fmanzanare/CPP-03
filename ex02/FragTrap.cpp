@@ -6,7 +6,7 @@
 /*   By: fmanzana <fmanzana@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 11:06:49 by fmanzana          #+#    #+#             */
-/*   Updated: 2023/07/06 11:23:08 by fmanzana         ###   ########.fr       */
+/*   Updated: 2023/07/06 18:00:46 by fmanzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ FragTrap::~FragTrap() {
 }
 
 FragTrap::FragTrap(const FragTrap &cp) : ClapTrap() {
-	std::cout << "FragTrap " + this->_name + " has been created with copy constructor.\n";
 	*this = cp;
+	std::cout << "FragTrap " + this->_name + " has been created with copy constructor.\n";
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &cp) {
