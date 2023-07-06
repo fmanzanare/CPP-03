@@ -6,7 +6,7 @@
 /*   By: fmanzana <fmanzana@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 13:24:25 by fmanzana          #+#    #+#             */
-/*   Updated: 2023/07/01 20:53:40 by fmanzana         ###   ########.fr       */
+/*   Updated: 2023/07/06 17:57:18 by fmanzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class ClapTrap {
 	private:
 		std::string _name;
-		int			hits;
-		int			energy;
-		int			damage;
+		int			_hits;
+		int			_energy;
+		int			_damage;
 		ClapTrap();
 	public:
 		ClapTrap(std::string name);

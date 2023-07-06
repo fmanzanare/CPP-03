@@ -6,19 +6,25 @@
 /*   By: fmanzana <fmanzana@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 13:24:34 by fmanzana          #+#    #+#             */
-/*   Updated: 2023/07/04 18:06:48 by fmanzana         ###   ########.fr       */
+/*   Updated: 2023/07/06 17:58:23 by fmanzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() {}
+ClapTrap::ClapTrap() {
+	this->_name = "Noname";
+	this->_hits = 10;
+	this->_energy = 10;
+	this->_damage = 0;
+	std::cout << "ClapTrap created by default constructor.\n";
+}
 
 ClapTrap::ClapTrap(std::string name) {
 	this->_name = name;
-	this->hits = 10;
-	this->energy = 10;
-	this->damage = 0;
+	this->_hits = 10;
+	this->_energy = 10;
+	this->_damage = 0;
 	std::cout << "ClapTrap " + this->_name + " has been created.\n";
 }
 
@@ -27,55 +33,55 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap::ClapTrap(const ClapTrap &cp) {
-	std::cout << "ClapTrap " + this->_name + " has been created with copy constructor.\n";
 	*this = cp;
+	std::cout << "ClapTrap " + this->_name + " has been created with copy constructor.\n";
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &cp) {
 	std::cout << "Copy assignment operator called.\n";
 	this->_name = cp._name;
-	this->energy = cp.energy;
-	this->hits = cp.hits;
-	this->damage = cp.damage;
+	this->_energy = cp._energy;
+	this->_hits = cp._hits;
+	this->_damage = cp._damage;
 	return (*this);
 }
 
 void ClapTrap::attack(const std::string &target) {
-	if (this->energy <= 0) {
+	if (this->_energy <= 0) {
 		std::cout << "ClapTrap " + this->_name + " has not enough energy.\n";
 		return ;
 	}
-	if (this->hits <= 0) {
+	if (this->_hits <= 0) {
 		std::cout << "ClapTrap " + this->_name + " has not enough hits.\n";
 		return ;
 	}
-	std::cout << "ClapTrap " + this->_name + " attacks " + target + ", causing " << this->damage << " point of damage.\n";
-	this->energy--;
+	std::cout << "ClapTrap " + this->_name + " attacks " + target + ", causing " << this->_damage << " point of damage.\n";
+	this->_energy--;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	if (this->energy <= 0) {
+	if (this->_energy <= 0) {
 		std::cout << "ClapTrap " + this->_name + " has not enough energy.\n";
 		return ;
 	}
-	if (this->hits <= 0) {
+	if (this->_hits <= 0) {
 		std::cout << "ClapTrap " + this->_name + " has not enough hits.\n";
 		return ;
 	}
 	std::cout << "ClapTrap " + this->_name + " has been repaired " << amount << " hits points.\n";
-	this->hits += amount;
-	this->energy--;
+	this->_hits += amount;
+	this->_energy--;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	if (this->energy <= 0) {
+	if (this->_energy <= 0) {
 		std::cout << "ClapTrap " + this->_name + " has not enough energy.\n";
 		return ;
 	}
-	if (this->hits <= 0) {
+	if (this->_hits <= 0) {
 		std::cout << "ClapTrap " + this->_name + " has not enough hits.\n";
 		return ;
 	}
 	std::cout << "ClapTrap " + this->_name + " has received " << amount << " damage.\n";
-	this->hits -= amount;
+	this->_hits -= amount;
 }
