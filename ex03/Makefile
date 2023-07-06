@@ -6,7 +6,7 @@
 #    By: fmanzana <fmanzana@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 12:06:31 by fmanzana          #+#    #+#              #
-#    Updated: 2023/07/06 12:10:16 by fmanzana         ###   ########.fr        #
+#    Updated: 2023/07/06 14:04:00 by fmanzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRCS =	ClapTrap.cpp\
 		ScavTrap.cpp\
 		FragTrap.cpp\
-		DiamonTrap.cpp\
+		DiamondTrap.cpp\
 		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

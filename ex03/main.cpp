@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmanzana <fmanzana@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/06 10:59:31 by fmanzana          #+#    #+#             */
-/*   Updated: 2023/07/06 14:20:03 by fmanzana         ###   ########.fr       */
+/*   Created: 2023/07/06 14:02:22 by fmanzana          #+#    #+#             */
+/*   Updated: 2023/07/06 14:18:15 by fmanzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#include "DiamondTrap.hpp"
 
-#include "ClapTrap.hpp"
+int	main(void) {
+	DiamondTrap dt1("dt1");
+	DiamondTrap dtcp(dt1);
 
-class FragTrap : virtual public ClapTrap {
-	public:
-		FragTrap();
-		FragTrap(std::string name);
-		~FragTrap();
-		FragTrap(const FragTrap &cp);
-		FragTrap &operator=(const FragTrap &cp);
-		void highFivesGuys();
-};
+	dt1.whoAmI();
+	dtcp.whoAmI();
 
-#endif
+	DiamondTrap dt2("dt2");
+
+	dt2.attack("foo");
+	dt2.beRepaired(10);
+	dt2.takeDamage(20);
+
+	return (0);
+}
